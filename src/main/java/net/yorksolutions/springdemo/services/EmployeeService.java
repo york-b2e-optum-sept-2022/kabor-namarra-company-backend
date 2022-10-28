@@ -18,8 +18,9 @@ public class EmployeeService {
         this.managerService = managerService;
     }
 
-    public void addNewEmployee(Employee employee) {
+    public Employee addNewEmployee(Employee employee) {
         repository.save(employee);
+        return employee;
     }
 
     public Iterable<Employee> getAllEmployees() {
