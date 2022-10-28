@@ -52,4 +52,9 @@ public class EmployeeController {
     Message deleteById(@PathVariable Long id) {
         return new Message(service.deleteById(id) ? "Success" : "Fail");
     }
+
+    @PutMapping("/{id}")
+    Message updateById(@PathVariable Long id, @RequestBody Employee employee) {
+        return new Message(service.updateById(id,employee) ? "Success" : "Fail");
+    }
 }

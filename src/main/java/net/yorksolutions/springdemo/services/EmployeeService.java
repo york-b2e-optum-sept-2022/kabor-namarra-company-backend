@@ -48,4 +48,14 @@ public class EmployeeService {
             return false;
         }
     }
+
+    public boolean updateById(Long id, Employee employee) {
+        try {
+            repository.findById(id).orElseThrow();
+            repository.save(employee);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
